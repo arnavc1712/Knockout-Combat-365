@@ -1,0 +1,25 @@
+{
+  "name": "boxing-spa",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "cd boxing-spa-backend && npm install && NODE_ENV=production node bin/www",
+    "heroku-postbuild": "cd boxing-spa && npm install && npm run build",
+    "server": "cd boxing-spa-backend && npm install && PORT=3001 nodemon bin/www",
+    "client-prod": "cd boxing-spa && npm install && npm run build",
+    "client-dev": "cd boxing-spa && npm install && npm start",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client-dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^4.0.1"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
