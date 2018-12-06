@@ -2,37 +2,49 @@ import React from 'react'
 import { Typography, Divider, Grid, Button} from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles'; 
 import propTypes from 'prop-types'
+import { red } from '@material-ui/core/colors'
 
 
 
 const styles = theme => ({
     title: {
-        fontSize: 32
+        fontSize: 48,
+        fontFamily: 'bebas-neue-bold',
+        [theme.breakpoints.down('md')]:{
+            paddingLeft:10,
+            paddingRight:10,
+            fontSize:40
+        }
+
     },
     button: {
         margin: theme.spacing.unit,
         marginTop: 64,
-        border: '2px solid #e53935',
+        fontFamily: 'proxima-nova, sans-serif',
+        border: '2px solid ' + red[600],
         fontWeight: 700,
         paddingLeft: 32,
         paddingRight: 32,
         paddingTop: 16,
         paddingBottom: 16,
-        color: '#e53935',
+        color: red[700],
         '&:hover': {
-            backgroundColor: '#e53935',
+            backgroundColor: red[600],
             border: '2px solid transparent',
             color: 'white'
         },
         '&:focus':{
-            backgroundColor: '#e53935',
+            backgroundColor: red[600],
             border: '2px solid transparent',
             color: 'white'
         },
         '&:active':{
-            backgroundColor: '#e53935',
+            backgroundColor: red[600],
             border: '2px solid transparent',
             color: 'white'
+        },
+        [theme.breakpoints.down('md')]:{
+            fontSize:12
         }
 
     },

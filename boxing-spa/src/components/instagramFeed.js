@@ -15,7 +15,7 @@ const settings = {
     slidesToShow: 4,
     slidesToScroll: 3,
     initialSlide: 0,
-  
+    dots: false,
     centerPadding:'50px',
     responsive: [
       {
@@ -24,7 +24,7 @@ const settings = {
           slidesToShow: 1,
           slidesToScroll: 1,
           infinite: true,
-          dots: true
+          dots: false
         }
       },
       {
@@ -32,7 +32,8 @@ const settings = {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          initialSlide: 1
+          initialSlide: 1,
+          dots: false
         }
       },
       {

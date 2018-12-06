@@ -1,13 +1,18 @@
 import React from 'react'
-import { Grid } from '@material-ui/core'
+import { Grid, IconButton, Icon } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles'
+import { red } from '@material-ui/core/colors'
 import propTypes from 'prop-types'
 
 
 const styles = {
-    grid: {
-        height: 300,
-        backgroundColor: "#e53935"
+    gridBody: {
+        height: 200,
+        backgroundColor: red[700]
+    },
+    gridFooter: {
+        height: 50,
+        backgroundColor: red[900]
     }
 }
 
@@ -15,7 +20,11 @@ const footer = (props) => {
     const { classes } = props
 
     return (
-        <Grid container alignItems="center" justify="center" className={classes.grid}>
+        <Grid container alignItems="center" justify="center">
+        <Grid item xs={12} className={classes.gridBody}></Grid>
+        <Grid item xs={12} className={classes.gridFooter}>
+
+        </Grid>
         </Grid>
     )
 }

@@ -6,7 +6,7 @@ export default function header() {
     return(
 
             <Parallax
-                        blur={{ min: -12, max: 25 }}
+                        blur={{ min: -15, max: 25 }}
                         bgImage={require('../assets/images/boxing-background.jpg')}
                         bgImageAlt="the dog"
                         strength={-200}>

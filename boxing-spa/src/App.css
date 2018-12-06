@@ -1,4 +1,12 @@
+@font-face {
+  font-family: "bebas-neue-bold";
+  src: url("./assets/fonts/BebasNeue\ Bold.otf");
+}
 
+@font-face {
+  font-family: "bebas-neue-regular";
+  src: url("./assets/fonts/BebasNeue\ Regular.otf")
+}
 
 .row.no-gutter {
   margin-left: 0;

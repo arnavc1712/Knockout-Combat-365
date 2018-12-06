@@ -9,11 +9,14 @@ import { Divider } from  '@material-ui/core'
 
 
 const styles = theme => ({
-  sec: {
+  secOne: {
     marginBottom: 128
   },
+  sec: {
+    marginBottom: 64
+  },
   divider: {
-    marginTop: 64,
+    marginTop: 128,
     marginLeft:128,
     marginRight:128,
     [theme.breakpoints.down('md')]:{
@@ -26,7 +29,6 @@ const styles = theme => ({
 
 class App extends Component {
 
-
   constructor(props){
     super(props);
     this.state = {instagramApiData: []}
@@ -35,7 +37,7 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-      <section className={this.props.classes.sec} id ="one">
+      <section className={this.props.classes.secOne} id ="one">
         <Header/>
       </section>
       
@@ -48,7 +50,7 @@ class App extends Component {
 
       <section id="three" className={this.props.classes.sec}>
         <MediaContent/>
-        
+        <Divider className={this.props.classes.divider}/>
       </section>
 
       <section id="four" className={this.props.classes.sec}>
