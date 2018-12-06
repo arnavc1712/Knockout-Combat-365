@@ -18,7 +18,8 @@
     "react-slick": "^0.23.2",
     "react-swipeable-views": "^0.13.0",
     "slick-carousel": "^1.8.1",
-    "typeface-roboto": "0.0.54"
+    "typeface-roboto": "0.0.54",
+    "classnames": "^2.2.6"
   },
   "scripts": {
     "start": "react-scripts start",

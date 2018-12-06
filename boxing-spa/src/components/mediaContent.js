@@ -11,7 +11,8 @@ const styles = theme => ({
         marginBottom: 80,
         fontFamily:'bebas-neue-bold',
         [theme.breakpoints.down('md')]:{
-            fontSize:32
+            fontSize:32,
+            marginBottom: 60
         }
     }
 })

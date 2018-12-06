@@ -10,16 +10,23 @@ import { Divider } from  '@material-ui/core'
 
 const styles = theme => ({
   secOne: {
-    marginBottom: 128
+    marginBottom: 128,
+    [theme.breakpoints.down('md')]:{
+      marginBottom:64
+    },
   },
   sec: {
-    marginBottom: 64
+    marginBottom: 64,
+    [theme.breakpoints.down('md')]:{
+      marginBottom:32
+    },
   },
   divider: {
     marginTop: 128,
     marginLeft:128,
     marginRight:128,
     [theme.breakpoints.down('md')]:{
+        marginTop: 64,
         marginLeft:32,
         marginRight:32
     }

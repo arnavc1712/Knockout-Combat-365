@@ -5,7 +5,7 @@ import { withStyles } from '@material-ui/core/styles'
 import { red } from '@material-ui/core/colors'
 
 
-const styles = {
+const styles = theme => ({
     root: {
         flexGrow: 1
     },
@@ -20,6 +20,9 @@ const styles = {
     },
     card: {
         maxWidth: 345,
+        [theme.breakpoints.down('md')]:{
+            maxWidth:300
+        }
       },
     media: {
         height: 140,
@@ -27,7 +30,7 @@ const styles = {
     content: {
         fontFamily: 'proxima-nova, sans-serif'
     }
-  };
+  })
 
 
 function contact(props) {
