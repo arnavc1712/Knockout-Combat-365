@@ -38,17 +38,8 @@ const styles = theme => ({
     },
     input: {
         display:'none'
-    },
-    divider: {
-        marginTop: 64,
-        marginLeft:128,
-        marginRight:128,
-        [theme.breakpoints.up('xs')]:{
-            marginLeft:32,
-            marginRight:32
-        }
     }
-   
+    
 })
 
 
@@ -66,9 +57,6 @@ const signUp = function(props) {
                     <Button variant="outlined" color="primary" className={classes.button}>
                         Sign up Now
                     </Button>
-                </Grid>
-                <Grid item xs={12}>
-                    <Divider className={classes.divider}/>
                 </Grid>
             </Grid>
         </React.Fragment>

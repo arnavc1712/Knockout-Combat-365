@@ -1,38 +1,36 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import { Button } from '@material-ui/core';
 import Team from './components/team'
 import Header from './components/header'
 import Signup from './components/signup'
-import propTypes from 'prop-types'
+import Footer from './components/footer'
+import MediaContent from './components/mediaContent'
 import { withStyles } from '@material-ui/core/styles'
-import './App.css';
+import { Divider } from  '@material-ui/core'
 
 
-const styles  ={
+const styles = theme => ({
   sec: {
     marginBottom: 128
-  }
+  },
+  divider: {
+    marginTop: 64,
+    marginLeft:128,
+    marginRight:128,
+    [theme.breakpoints.down('md')]:{
+        marginLeft:32,
+        marginRight:32
+    }
 }
+})
+
+
 class App extends Component {
+
 
   constructor(props){
     super(props);
-    this.state = {response: ""}
+    this.state = {instagramApiData: []}
   }
-
-  componentDidMount() {
-    this.callApi()
-    .then(res => this.setState({ response: res.blah}))
-    .catch(err => console.log(err))
-  }
-
-  callApi = async() => {
-    const response = await fetch('/api/test');
-    const body = await response.json()
-    return body
-  }
-
 
   render() {
     return (
@@ -44,11 +42,21 @@ class App extends Component {
 
       <section id="two" className={this.props.classes.sec}>
         <Signup/>
+        <Divider className={this.props.classes.divider}/>
       </section>
 
 
-      <section id="three">
-        <Team/>
+      <section id="three" className={this.props.classes.sec}>
+        <MediaContent/>
+        
+      </section>
+
+      <section id="four" className={this.props.classes.sec}>
+      <Team/>
+      </section>
+
+      <section id="five">
+      <Footer/>
       </section>
     </React.Fragment>
     );
