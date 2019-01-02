@@ -5,9 +5,11 @@
   "dependencies": {
     "@material-ui/core": "^3.6.0",
     "@material-ui/icons": "^3.0.1",
+    "classnames": "^2.2.6",
     "instafeed.js": "^1.4.1",
     "material-auto-rotating-carousel": "^2.1.0",
     "material-ui": "^1.0.0-beta.47",
+    "moment": "^2.23.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-instagram-embed": "^1.4.1",
@@ -18,8 +20,7 @@
     "react-slick": "^0.23.2",
     "react-swipeable-views": "^0.13.0",
     "slick-carousel": "^1.8.1",
-    "typeface-roboto": "0.0.54",
-    "classnames": "^2.2.6"
+    "typeface-roboto": "0.0.54"
   },
   "scripts": {
     "start": "react-scripts start",

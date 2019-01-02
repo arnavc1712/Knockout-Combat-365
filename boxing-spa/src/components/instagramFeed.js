@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick-theme.css"
 import Slider from "react-slick";
 import { ChatBubble, Favorite } from '@material-ui/icons'
 import '../App.css';
+import conf from '../conf.json'
 
 const settings = {
     dots: true,
@@ -55,10 +56,10 @@ export default class instagramFeed extends React.Component {
             instagramApiData: []
         }
     }
-
+    
     componentDidMount() {
         let url = 'https://api.instagram.com/v1/users/self/media/recent/?access_token='
-        let accessToken= '335298764.5f03155.5c2151a9bb344dc083e01fcbb6b4f2fc'
+        let accessToken= conf.instagram.access_token
         this.callApi(url,accessToken)
         .then((res) => {
                       this.setState({ instagramApiData: res.data})
@@ -87,7 +88,7 @@ export default class instagramFeed extends React.Component {
                     <span className="likes"><Favorite className="icon-text"/>{slide.likes.count}</span>
                     <span className="comments"><ChatBubble className="icon-text"/>{slide.comments.count}</span>
                 </div>
-                <img src={slide.images.standard_resolution.url} width={200} height={300} className="img-responsive"/>
+                <img src={slide.images.standard_resolution.url} width={200} height={350} className="img-responsive"/>
                 </div>
                 </a>
                 )
