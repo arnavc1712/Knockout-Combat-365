@@ -1,0 +1,10 @@
+{
+    "twilio": {
+        "accountSid": "AC8c5bdd8f5e4d1729911ca7429a621e4e",
+        "authToken": "0fe07c3b353e2ddbce69e04cad6a1ec0"
+    },
+    "email": {
+        "id":"arnav171296@gmail.com",
+        "pass": "7121@Nanu"
+    }
+}
