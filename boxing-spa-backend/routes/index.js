@@ -32,6 +32,7 @@ let mailOptions = {
 };
 
 router.post('/signup', (req,res) => {
+  console.log("In api")
   const { phoneNo, firstName, lastName, date, time } = req.body
   const uniqueId = guidGenerator()
   userDict[uniqueId] = {phoneNo: phoneNo,
@@ -40,7 +41,7 @@ router.post('/signup', (req,res) => {
                         date: date,
                         time: time}
   mailOptions = {...mailOptions,html: html.replace("{ user }",firstName + " " + lastName)
-                                          .replace("{ confirmUri }","http://shrouded-savannah-57355.herokuapp.com/api/confirmation/" + uniqueId ) 
+                                          .replace("{ confirmUri }","https://shrouded-savannah-57355.herokuapp.com/api/confirmation/" + uniqueId ) 
                                           .replace("{ confirmDate }",date)
                                           .replace("{ confirmTime }",time)
                                         }
