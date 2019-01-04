@@ -31,8 +31,8 @@ let mailOptions = {
   html: html
 };
 
+
 router.post('/signup', (req,res) => {
-  console.log("In api")
   const { phoneNo, firstName, lastName, date, time } = req.body
   const uniqueId = guidGenerator()
   userDict[uniqueId] = {phoneNo: phoneNo,
@@ -48,12 +48,14 @@ router.post('/signup', (req,res) => {
   transporter.sendMail(mailOptions, function(error, info){
     if (error) {
       console.log(error);
+      res.json({success:false})
     } else {
       console.log('Email sent: ' + info.response);
+      res.json({success:true})
     }
   });
 
-  res.send("Done")
+  
 })
 
 router.get('/confirmation/:id', (req,res) => {

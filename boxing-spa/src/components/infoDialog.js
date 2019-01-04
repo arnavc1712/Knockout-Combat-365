@@ -1,7 +1,8 @@
 import React from "react"
 import { Button,TextField, Dialog, DialogActions, DialogContent,DialogContentText, DialogTitle} from "@material-ui/core"
 import moment from 'moment'
-
+import SnackbarComponent from './snackbar'
+import { green, red } from '@material-ui/core/colors';
 
 class infoDialog extends React.Component {
     constructor(props){
@@ -11,7 +12,12 @@ class infoDialog extends React.Component {
             firstName: "",
             lastName: "",
             date: moment().add(1, 'days').format('YYYY-MM-DD'),
-            time:"07:30"
+            time:"07:30",
+            snackbarOpen: false,
+            snackbarMessage:"",
+            snackbarColor: {
+                backgroundColor: null
+            }
         }
     }
 
@@ -20,6 +26,13 @@ class infoDialog extends React.Component {
           [name]: event.target.value,
         });
     };
+
+
+    handleSnackbarClose = () => {
+        this.setState({
+            snackbarOpen: false
+        });
+    }
 
     makeTrialRequest = () => {
         fetch('https://shrouded-savannah-57355.herokuapp.com/api/signup', {
@@ -36,7 +49,27 @@ class infoDialog extends React.Component {
             time: this.state.time
         })
         })
+        .then(res=>res.json())
+        .then((res) => {
+            if(res.success){
+                this.setState((prevState) => ({
+                    snackbarMessage:"The free trial request has been sent to one of the instructors.\n \nIf the time suits him he will get back",
+                    snackbarOpen:true,
+                    snackbarColor: {
+                        backgroundColor: green[600]
+                    }}))
+            }
 
+            else{
+                this.setState((prevState) => ({
+                    snackbarMessage:"There seems to be an error!\n Please try again in a while",
+                    snackbarOpen:true,
+                    snackbarColor: {
+                        backgroundColor: red[600]
+                    }}))
+            }
+        });
+        this.props.close();
 
     }
     
@@ -118,6 +151,13 @@ class infoDialog extends React.Component {
                         </Button>
                     </DialogActions>
                 </Dialog>
+
+                <SnackbarComponent 
+                    open={this.state.snackbarOpen} 
+                    handleClose={this.handleSnackbarClose}
+                    message={this.state.snackbarMessage}
+                    colour={this.state.snackbarColor}>
+                </SnackbarComponent>
             </React.Fragment>
         )
     }
