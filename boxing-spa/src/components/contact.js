@@ -1,5 +1,5 @@
-import React, {Component} from 'react'
-import { Grid, Avatar, Card, Typography, CardActionArea, CardActions, CardContent, CardMedia, Button } from '@material-ui/core';
+import React from 'react'
+import { Grid, Avatar, Card, Typography, CardActionArea, CardContent} from '@material-ui/core';
 import propTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import { red } from '@material-ui/core/colors'

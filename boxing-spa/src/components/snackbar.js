@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import { Button, Snackbar, SnackbarContent, Icon} from '@material-ui/core'
+import { Snackbar, SnackbarContent} from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles'
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { green } from '@material-ui/core/colors';
-import {CheckCircle, Error, Close} from '@material-ui/icons'
+import {CheckCircle, Error} from '@material-ui/icons'
 
 const styles = theme => ({
     margin: {
@@ -37,8 +37,6 @@ class SnackbarComponent extends Component {
 
     constructor(props){
         super(props);
-        console.log(this.props.colour);
-        
     }
 
     

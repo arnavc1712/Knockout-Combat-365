@@ -4,6 +4,7 @@ import moment from 'moment'
 import SnackbarComponent from './snackbar'
 import { green, red, blueGrey } from '@material-ui/core/colors';
 import { withStyles } from '@material-ui/core/styles';
+import { compose } from 'recompose';
 
 
 const styles = theme => ({
@@ -18,11 +19,6 @@ const styles = theme => ({
         right: 0
     },
     cssFocused: {
-        // '&$cssFocused': {
-        //     '&:after':{
-        //     borderBottomColor: red[600]
-        //     }
-        //   } 
     },
     cssLabel: {
         '&$cssFocused': {
@@ -111,7 +107,7 @@ class infoDialog extends React.Component {
             }
         }
         if(name === 'phoneNo'){
-            if(this.state[name] && /^([0|\+[0-9]{1,5})?([7-9][0-9]{9})$/.test(this.state[name])){
+            if(this.state[name] && /^([0|+[0-9]{1,5})?([7-9][0-9]{9})$/.test(this.state[name])){
                 this.setState({phoneNoError:null})
             }
             else{
@@ -381,4 +377,7 @@ class infoDialog extends React.Component {
 
 
 
-export default withStyles(styles)(withMobileDialog()(infoDialog))
+export default compose(
+  withMobileDialog(),
+  withStyles(styles)
+)(infoDialog)

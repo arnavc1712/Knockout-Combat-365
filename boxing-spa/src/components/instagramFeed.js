@@ -7,7 +7,6 @@ import '../App.css';
 import conf from '../conf.json'
 
 const settings = {
-    dots: true,
     infinite: true,
     speed: 500,
     autoplay: true,

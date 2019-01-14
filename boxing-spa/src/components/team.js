@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 import { Grid , Typography} from '@material-ui/core';
 import Contact from './contact'
 import { withStyles } from '@material-ui/core/styles'
