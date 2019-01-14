@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles'
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { green } from '@material-ui/core/colors';
+import {CheckCircle, Error, Close} from '@material-ui/icons'
 
 const styles = theme => ({
     margin: {
@@ -26,6 +27,11 @@ const styles = theme => ({
 })
 
 
+const variantIcon = {
+    success: CheckCircle,
+    error: Error,
+  };
+
 
 class SnackbarComponent extends Component {
 
@@ -35,8 +41,9 @@ class SnackbarComponent extends Component {
         
     }
 
-
+    
     render(){
+        const Icon = variantIcon[this.props.variant]
         return(
             <React.Fragment>
                 <Snackbar
@@ -46,7 +53,7 @@ class SnackbarComponent extends Component {
                         horizontal: 'center',
                     }}
                     open={this.props.open}
-                    autoHideDuration={4000}
+                    autoHideDuration={2000}
                     onClose={this.props.handleClose}
                     >
                     <SnackbarContent
@@ -57,7 +64,7 @@ class SnackbarComponent extends Component {
                         message={
                             <span id="client-snackbar" className={this.props.classes.message}>
                               <Icon className={classNames(this.props.classes.icon, this.props.classes.iconVariant)} />
-                              {this.props.message}
+                              <div style={{textAlign:'center'}}>{this.props.message}</div>
                             </span>
                           }
                     />

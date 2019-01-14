@@ -13,6 +13,7 @@
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-instagram-embed": "^1.4.1",
+    "react-material-ui-form-validator": "^2.0.3",
     "react-owl-carousel2": "^0.3.0",
     "react-parallax": "^2.0.1",
     "react-responsive-carousel": "^3.1.43",
