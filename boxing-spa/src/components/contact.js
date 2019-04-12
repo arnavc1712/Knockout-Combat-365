@@ -42,15 +42,15 @@ function contact(props) {
                         <CardContent>
                             <Grid container justify="center" alignItems="center">
                               <Grid item>
-                                <Avatar alt="Remy Sharp" src={require('../assets/images/jiya.jpg')} className={classes.bigAvatar} />
+                                <Avatar alt="Remy Sharp" src={props.asset} className={classes.bigAvatar} />
                               </Grid>
                               <Grid item>
                                 <Typography gutterBottom variant="h5" component="h2" align="center" className={classes.content}>
-                                    Lizard
+                                    {props.name}
                                 </Typography>
                             <Typography component="p" align="center" className={classes.content}>
-                                Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                                across all continents except Antarctica
+                                {props.info}
+                                
                             </Typography>
                             </Grid>
                             </Grid>

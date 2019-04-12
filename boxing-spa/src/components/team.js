@@ -5,6 +5,9 @@ import { withStyles } from '@material-ui/core/styles'
 import propTypes from 'prop-types'
 
 
+const teamData = require("../assets/teamInfo.json")
+
+
 const styles = theme => ({
     title: {
         marginBottom:64,
@@ -19,21 +22,27 @@ const styles = theme => ({
 
 
 
+
+
 function team(props) {
     const { classes } = props
   return(
       <React.Fragment>
         <Typography variant="headline" align="center" className={classes.title}>Meet the Team</Typography>
         <Grid container direction="row" justify="space-around" alignItems="center" spacing={8}>
-            <Grid item xs={12} sm={4}>
-                <Contact/>
+            <Grid item xs={12} sm={6}>
+                <Contact name ={teamData[0].name} 
+                         info={teamData[0].info}
+                         asset={require("../assets/images/kamal.png")}/>
             </Grid>
-            <Grid item xs={12} sm={4}>
-                <Contact/>
+            <Grid item xs={12} sm={6}>
+                <Contact name ={teamData[1].name} 
+                         info={teamData[1].info}
+                         asset={require("../assets/images/jiya.jpg")}/>
             </Grid>
-            <Grid item xs={12} sm={4}>
+            {/* <Grid item xs={12} sm={4}>
                 <Contact/>
-            </Grid>
+            </Grid> */}
         </Grid>
       </React.Fragment>
   )

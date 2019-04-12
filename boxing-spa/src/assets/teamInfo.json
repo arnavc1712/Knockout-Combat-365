@@ -1,0 +1,13 @@
+[
+    {
+        "name":"Kamal Hussain",
+        "info": "A national boxing gold medalist coupled with 15 years of experience",
+        "asset": "../assets/images/kamal.png"
+    },
+
+    {
+        "name":"Jiya",
+        "info": "Taekwonodo international gold medalist coupled with 20 years of experience",
+        "asset": "../assets/images/jiya.jpg"
+    }
+]
