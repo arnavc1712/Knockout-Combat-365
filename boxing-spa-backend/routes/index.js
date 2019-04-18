@@ -41,7 +41,7 @@ router.post('/signup', (req,res) => {
                         date: date,
                         time: time}
   mailOptions = {...mailOptions,html: html.replace("{ user }",firstName + " " + lastName)
-                                          .replace("{ confirmUri }","https://shrouded-savannah-57355.herokuapp.com/api/confirmation/" + uniqueId ) 
+                                          .replace("{ confirmUri }","https://knockout-365.herokuapp.com/api/confirmation/" + uniqueId ) 
                                           .replace("{ confirmDate }",date)
                                           .replace("{ confirmTime }",time)
                                         }

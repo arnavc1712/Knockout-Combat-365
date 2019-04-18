@@ -150,7 +150,7 @@ class infoDialog extends React.Component {
         }
         else{
             this.setState({loading:true})
-            fetch('https://shrouded-savannah-57355.herokuapp.com/api/signup', {
+            fetch('https://knockout-365.herokuapp.com/api/signup', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
