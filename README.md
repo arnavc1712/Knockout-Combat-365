@@ -1,3 +1,4 @@
+# ![Logo](boxing-spa/src/assets/images/logo.png)
 # Knockout Combat 365
 **React** and **Node.js** based Responsive Single Page Application for **Knockout Combat 365**, a boxing class situated in Mumbai.
 
@@ -6,5 +7,7 @@ Programmed an appointment booking system with the help of **Twilio** and **nodem
 Deployed on **Heroku**
 
 Check it out- http://knockout-365.herokuapp.com
+
+
 
 
